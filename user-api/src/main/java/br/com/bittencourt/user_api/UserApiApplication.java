@@ -3,7 +3,6 @@ package br.com.bittencourt.user_api;
 import br.com.bittencourt.user_api.domain.User;
 import br.com.bittencourt.user_api.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

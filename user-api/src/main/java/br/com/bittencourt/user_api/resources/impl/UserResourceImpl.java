@@ -18,7 +18,7 @@ public class UserResourceImpl implements UserResource {
 
     private final UserService userService;
     @Override
-    public ResponseEntity<User> findById(Long id) throws Exception {
+    public ResponseEntity<User> findById(Long id) {
         return ResponseEntity.status(200).body(userService.findById(id));
     }
 
