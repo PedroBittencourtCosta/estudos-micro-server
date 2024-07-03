@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @RequiredArgsConstructor
 @Slf4j     // usado apenas para mostrar a parte do load balance
 @Service
@@ -24,7 +26,7 @@ public class PayrollService {
         try {
             User user = userFeign.findById(workerId).getBody();
 
-            return new Payroll(
+            if(Objects.nonNull(user))  return new Payroll(
                     user.getName(),
                     payroll.getDescription(),
                     user.getHourlyPrice(),
@@ -37,6 +39,8 @@ public class PayrollService {
         }catch (Exception ex){
             throw new IllegalArgumentException("Ilegal argument exception");
         }
+
+        return null;
 
     }
 }
